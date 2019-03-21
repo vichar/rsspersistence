@@ -38,7 +38,7 @@ func TestReadingConfiguration(t *testing.T) {
 		}
 	})
 
-	t.Run("ParsingConfiguration File to Object", func(t *testing.T) {
+	t.Run("ParseContent File to Object", func(t *testing.T) {
 		data := `
         key: 0c681e1e-48ad-11e9-8646-d663bd873d93
         topic: /topics/test
