@@ -19,6 +19,12 @@ func ParseContent(content string) (FirebaseDatabaseConnnection, error) {
 	return connection, error
 }
 
+// ConnectFirebase connecting to Firebase Database
+func ConnectFirebase(firebaseKey string, topic string) (bool, error) {
+
+	return true, nil
+}
+
 // FirebaseDatabaseConnnection contains data for connecting to Fireware Database
 type FirebaseDatabaseConnnection struct {
 	Key   string

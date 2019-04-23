@@ -1,6 +1,7 @@
 package rsspersistence_test
 
 import (
+	"strconv"
 	"strings"
 	"testing"
 
@@ -54,6 +55,18 @@ func TestReadingConfiguration(t *testing.T) {
 			}
 			if "/topics/test" != content.Topic {
 				t.Errorf("It should contain assigned topic: /topics/test")
+			}
+		}
+	})
+
+	t.Run("Connecting to Firebase Database", func(t *testing.T) {
+		result, error := rsspersistence.ConnectFirebase("fbKey", "topic")
+		if error != nil {
+			get := error.Error()
+			t.Errorf("It should not return any errors %s", get)
+		} else {
+			if !result {
+				t.Errorf("It should not return any errors %s", strconv.FormatBool(result))
 			}
 		}
 	})
